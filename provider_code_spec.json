@@ -1,0 +1,280 @@
+{
+	"provider": {
+		"name": "thingsboard"
+	},
+	"resources": [
+		{
+			"name": "device",
+			"schema": {
+				"attributes": [
+					{
+						"name": "additional_info",
+						"single_nested": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "created_time",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "Timestamp of the device creation, in milliseconds"
+						}
+					},
+					{
+						"name": "customer_id",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "entity_type",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "string",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"CUSTOMER\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "ID of the entity, time-based UUID v1"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "device_data",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "configuration",
+									"single_nested": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "transport_configuration",
+									"single_nested": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "device_profile_id",
+						"single_nested": {
+							"computed_optional_required": "required",
+							"attributes": [
+								{
+									"name": "entity_type",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "string",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"DEVICE_PROFILE\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "ID of the entity, time-based UUID v1"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "firmware_id",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "entity_type",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "string",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"OTA_PACKAGE\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "ID of the entity, time-based UUID v1"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "id",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "entity_type",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "string",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"DEVICE\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "ID of the entity, time-based UUID v1"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "label",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "Label that may be used in widgets"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "Unique Device Name in scope of Tenant"
+						}
+					},
+					{
+						"name": "software_id",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "entity_type",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "string",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"OTA_PACKAGE\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "ID of the entity, time-based UUID v1"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "tenant_id",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "entity_type",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "string",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"TENANT\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "required",
+										"description": "ID of the entity, time-based UUID v1"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "Device Profile Name"
+						}
+					},
+					{
+						"name": "device_id",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "A string value representing the device id. For example, '784f394c-42b6-435a-983c-b7beff2784f9'"
+						}
+					}
+				]
+			}
+		}
+	],
+	"version": "0.1"
+}

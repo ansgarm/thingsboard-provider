@@ -1,0 +1,17 @@
+provider:
+  name: thingsboard
+  #schema_ref: '#/components/schemas/examplecloud_provider_schema'
+resources:
+  device:
+    create:
+      path: /api/device{?accessToken}
+      method: POST
+    read:
+      path: /api/device/{deviceId}
+      method: GET
+    update:
+      path: /api/device{?accessToken}
+      method: POST
+    delete:
+      path: /api/device/{deviceId}
+      method: DELETE

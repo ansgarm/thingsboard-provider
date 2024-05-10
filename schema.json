@@ -1,0 +1,237 @@
+{
+  "format_version": "1.0",
+  "provider_schemas": {
+    "registry.terraform.io/ansgarm/thingsboard": {
+      "provider": {
+        "version": 0,
+        "block": {
+          "attributes": {
+            "access_token": {
+              "type": "string",
+              "description": "Access token for the Thingsboard API.",
+              "description_kind": "markdown",
+              "required": true,
+              "sensitive": true
+            },
+            "endpoint": {
+              "type": "string",
+              "description": "Endpoint of the Thingsboard installation.",
+              "description_kind": "markdown",
+              "required": true
+            }
+          },
+          "description_kind": "plain"
+        }
+      },
+      "resource_schemas": {
+        "thingsboard_device": {
+          "version": 0,
+          "block": {
+            "attributes": {
+              "additional_info": {
+                "nested_type": {
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "created_time": {
+                "type": "number",
+                "description": "Timestamp of the device creation, in milliseconds",
+                "description_kind": "markdown",
+                "optional": true,
+                "computed": true
+              },
+              "customer_id": {
+                "nested_type": {
+                  "attributes": {
+                    "entity_type": {
+                      "type": "string",
+                      "description": "string",
+                      "description_kind": "markdown",
+                      "required": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the entity, time-based UUID v1",
+                      "description_kind": "markdown",
+                      "required": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "device_data": {
+                "nested_type": {
+                  "attributes": {
+                    "configuration": {
+                      "nested_type": {
+                        "nesting_mode": "single"
+                      },
+                      "description_kind": "plain",
+                      "optional": true,
+                      "computed": true
+                    },
+                    "transport_configuration": {
+                      "nested_type": {
+                        "nesting_mode": "single"
+                      },
+                      "description_kind": "plain",
+                      "optional": true,
+                      "computed": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "device_id": {
+                "type": "string",
+                "description": "A string value representing the device id. For example, '784f394c-42b6-435a-983c-b7beff2784f9'",
+                "description_kind": "markdown",
+                "optional": true,
+                "computed": true
+              },
+              "device_profile_id": {
+                "nested_type": {
+                  "attributes": {
+                    "entity_type": {
+                      "type": "string",
+                      "description": "string",
+                      "description_kind": "markdown",
+                      "required": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the entity, time-based UUID v1",
+                      "description_kind": "markdown",
+                      "required": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "required": true
+              },
+              "firmware_id": {
+                "nested_type": {
+                  "attributes": {
+                    "entity_type": {
+                      "type": "string",
+                      "description": "string",
+                      "description_kind": "markdown",
+                      "required": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the entity, time-based UUID v1",
+                      "description_kind": "markdown",
+                      "required": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "id": {
+                "nested_type": {
+                  "attributes": {
+                    "entity_type": {
+                      "type": "string",
+                      "description": "string",
+                      "description_kind": "markdown",
+                      "required": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the entity, time-based UUID v1",
+                      "description_kind": "markdown",
+                      "required": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "label": {
+                "type": "string",
+                "description": "Label that may be used in widgets",
+                "description_kind": "markdown",
+                "optional": true,
+                "computed": true
+              },
+              "name": {
+                "type": "string",
+                "description": "Unique Device Name in scope of Tenant",
+                "description_kind": "markdown",
+                "required": true
+              },
+              "software_id": {
+                "nested_type": {
+                  "attributes": {
+                    "entity_type": {
+                      "type": "string",
+                      "description": "string",
+                      "description_kind": "markdown",
+                      "required": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the entity, time-based UUID v1",
+                      "description_kind": "markdown",
+                      "required": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "tenant_id": {
+                "nested_type": {
+                  "attributes": {
+                    "entity_type": {
+                      "type": "string",
+                      "description": "string",
+                      "description_kind": "markdown",
+                      "required": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the entity, time-based UUID v1",
+                      "description_kind": "markdown",
+                      "required": true
+                    }
+                  },
+                  "nesting_mode": "single"
+                },
+                "description_kind": "plain",
+                "optional": true,
+                "computed": true
+              },
+              "type": {
+                "type": "string",
+                "description": "Device Profile Name",
+                "description_kind": "markdown",
+                "optional": true,
+                "computed": true
+              }
+            },
+            "description_kind": "plain"
+          }
+        }
+      }
+    }
+  }
+}
